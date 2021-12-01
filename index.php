@@ -28,5 +28,11 @@
 
     echo 'La lunghezza della stringa è: ' . $length_str;
 
+    echo '<br>';
+    echo '<br>';
+
+    $censoredKeyword = $_GET["keyword"];
+
+    echo 'La parola da censurare è: ' . $censoredKeyword;
     
 ?>
