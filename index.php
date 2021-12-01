@@ -5,8 +5,10 @@
         Una parola da censurare viene passata dall'utente tramite parametro GET.
         Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola da censurare. 
     */
-    $name = "Valerio";
-    echo 'Questo è il primo progetto di ' .  $name . ' utilizzando php';
+    $name = $_GET["name"];
+    $surname = $_GET["surname"];
+    $fullName = $name . ' ' . $surname;
+    echo 'Questo è il primo progetto di ' .  $fullName . ' utilizzando php';
 
 
     #string to censor
@@ -59,7 +61,7 @@
     echo '<pre>';
     var_dump($array_str);
     echo '<pre>';
-    
+
     echo '<br>';
     echo '<br>';
 
@@ -70,4 +72,36 @@
     var_dump($censoredArray);
     echo '<pre>';
 
+    echo '<hr>';
+    echo '<br>';
+    echo 'Riporto tutto su HTML';
+    echo '<br>';
+    echo '<br>';
+
+    echo '<hr>';
+
+
 ?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Censoring_a_word_in_a_string</title>
+</head>
+<body>
+    <h1>Questo è il primo progetto di <?= $fullName; ?> </h1>
+    <p>In questa pagina potremo censurare una parola (inserendola tramite la query) da una stringa</p>
+    <p>Stringa su cui applicare la censura</p>
+    <p><?= $lorem_str; ?></p>
+    <p>la parola da censurare è:  <?= $censoredKeyword;?></p>
+    <p>Ecco la stringa con la parola <?= $censoredKeyword;?> trasformata in ****</p>
+    <p><?= $censoredString;?></p>
+
+
+</body>
+</html>
